@@ -99,7 +99,6 @@ const config = {
   githubRepo: "your-repo-name",
 
   social: {
-    twitter: "https://x.com/you",
     linkedin: "https://linkedin.com/in/you",
     instagram: "https://instagram.com/you",
     facebook: "https://facebook.com/you",

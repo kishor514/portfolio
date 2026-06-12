@@ -1,3 +1,5 @@
+// app/api/send/route.ts  — FULL UPDATED FILE
+
 import { EmailTemplate } from "@/components/email-template";
 import { config } from "@/data/config";
 import { Resend } from "resend";
@@ -25,26 +27,29 @@ const Email = z.object({
   email: z.string().email({ message: "Email is invalid!" }),
   message: z.string().min(10, "Message is too short!"),
 });
+
 export async function POST(req: Request) {
   try {
     const ip = req.headers.get("x-forwarded-for") ?? "unknown";
     if (isRateLimited(ip)) {
-      return Response.json({ error: "Too many requests. Please try again later." }, { status: 429 });
+      return Response.json(
+        { error: "Too many requests. Please try again later." },
+        { status: 429 }
+      );
     }
 
     const body = await req.json();
-    const {
-      success: zodSuccess,
-      data: zodData,
-      error: zodError,
-    } = Email.safeParse(body);
+    const { success: zodSuccess, data: zodData, error: zodError } =
+      Email.safeParse(body);
+
     if (!zodSuccess)
       return Response.json({ error: zodError?.message }, { status: 400 });
 
     const { data: resendData, error: resendError } = await resend.emails.send({
-      from: "Porfolio <onboarding@resend.dev>",
-      to: [config.email],
-      subject: "Contact me from portfolio",
+      from: "Portfolio Contact <onboarding@resend.dev>", // ✅ keep this until you add a custom domain
+      to: [config.email],                                // ✅ sends to kishor8754215627@gmail.com
+      replyTo: zodData.email,                            // ✅ reply goes straight to the sender
+      subject: `New message from ${zodData.fullName}`,  // ✅ clearer subject line
       react: EmailTemplate({
         fullName: zodData.fullName,
         email: zodData.email,
@@ -53,11 +58,13 @@ export async function POST(req: Request) {
     });
 
     if (resendError) {
+      console.error("Resend error:", resendError);
       return Response.json({ error: "Failed to send email" }, { status: 500 });
     }
 
     return Response.json(resendData);
   } catch (error) {
-    return Response.json({ error }, { status: 500 });
+    console.error("Unexpected error:", error);
+    return Response.json({ error: "Internal server error" }, { status: 500 });
   }
 }

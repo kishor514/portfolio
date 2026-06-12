@@ -25,6 +25,7 @@ export enum SkillNames {
   GCP = "gcp",
   VIM = "vim",
   VERCEL = "vercel",
+  PHP = "php",
 }
 export type Skill = {
   id: number;
@@ -72,7 +73,7 @@ export const SKILLS: Record<SkillNames, Skill> = {
     id: 5,
     name: "react",
     label: "React",
-    shortDescription: `"use using" 
+    shortDescription: `"use using"
 using use = useUsing("use")`,
     color: "#61dafb",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
@@ -85,6 +86,14 @@ using use = useUsing("use")`,
       "the chill pill for your frontend, it hits different! 🟢😌",
     color: "#41b883",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
+  },
+  [SkillNames.PHP]: {
+    id: 26,
+    name: "php",
+    label: "PHP",
+    shortDescription: "Backend scripting language for dynamic web applications.",
+    color: "#777BB4",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
   },
   [SkillNames.NEXTJS]: {
     id: 7,
@@ -258,48 +267,47 @@ export type Experience = {
 export const EXPERIENCE: Experience[] = [
   {
     id: 1,
-    startDate: "Dec 2024",
+    startDate: "Jan 2026",
     endDate: "Present",
-    title: "Full Stack Developer",
-    company: "OmniNexus Sdn Bhd",
+    title: "Full Stack Web Developer",
+    company: "Nearlook Mart Private Limited",
     description: [
-      "Built a custom image editor from scratch, cutting $4.8k/year in SaaS costs.",
-      "Architected async job queues processing 1k+ AI tasks daily with bulletproof reliability.",
-      "Optimized media delivery pipeline, slashing asset load times by 40%.",
-      "Shipped high-impact features end-to-end from requirements to production.",
-    ],
-    skills: [
-      SkillNames.NEXTJS,
-      SkillNames.TS,
-      SkillNames.REACT,
-      SkillNames.NODEJS,
-      SkillNames.POSTGRES,
-      SkillNames.MONGODB,
-      SkillNames.DOCKER,
-      SkillNames.GCP,
-    ],
-  },
-  {
-    id: 2,
-    startDate: "Apr 2022",
-    endDate: "Dec 2024",
-    title: "Freelance Full Stack Developer",
-    company: "Self-employed",
-    description: [
-      "Transformed chaotic Excel sheets into polished internal tools for various clients.",
-      "Shipped dashboards and custom CMS platforms tailored to each client's workflow.",
-      "Automated repetitive processes, improving efficiency and reducing human error.",
-      "Focused on clean, maintainable code and interfaces that users actually enjoy.",
+      "Developing and maintaining scalable web applications using the MERN stack, ensuring high performance and reliability.",
+      "Building responsive user interfaces and integrating RESTful APIs to deliver seamless user experiences.",
+      "Designing backend modules and managing MongoDB databases for efficient data handling and system functionality.",
+      "Collaborating with cross-functional teams to implement new features, optimize performance, and support production deployments.",
     ],
     skills: [
       SkillNames.REACT,
-      SkillNames.VUE,
       SkillNames.NODEJS,
       SkillNames.EXPRESS,
       SkillNames.MONGODB,
-      SkillNames.POSTGRES,
+      SkillNames.TS,
       SkillNames.TAILWIND,
-      SkillNames.WORDPRESS,
+      SkillNames.GIT,
+      SkillNames.GITHUB,
+    ],
+  },
+
+  {
+    id: 2,
+    startDate: "SEP 2025",
+    endDate: "NOV 2025",
+    title: "PHP Developer Intern",
+    company: "Nearlook Mart Private Limited",
+    description: [
+      "Contributed to the development of a Real Estate E-Commerce platform using PHP and MySQL.",
+      "Created responsive and user-friendly interfaces with HTML, CSS, and JavaScript to enhance user engagement.",
+      "Managed backend functionality and database operations using XAMPP and MySQL while ensuring data accuracy.",
+      "Implemented new features, resolved application issues, and improved overall system performance and usability.",
+    ],
+    skills: [
+      SkillNames.HTML,
+      SkillNames.CSS,
+      SkillNames.JS,
+      SkillNames.GIT,
+      SkillNames.GITHUB,
+      SkillNames.PHP,
     ],
   },
 ];
@@ -320,4 +328,3 @@ export const themeDisclaimers = {
     "Dark mode on! Finally, someone who understands true sophistication.",
   ],
 };
-

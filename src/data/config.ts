@@ -1,45 +1,43 @@
 const config = {
-  title: "Naresh Khatri | Full-Stack Developer",
-  description: {
-    long: "Explore the portfolio of Naresh, a full-stack developer and creative technologist specializing in interactive web experiences, 3D animations, and innovative projects. Discover my latest work, including Coding Ducks, The Booking Desk, Ghostchat, and more. Let's build something amazing together!",
-    short:
-      "Discover the portfolio of Naresh, a full-stack developer creating interactive web experiences and innovative projects.",
-  },
-  keywords: [
-    "Naresh",
-    "portfolio",
-    "full-stack developer",
-    "creative technologist",
-    "web development",
-    "3D animations",
-    "interactive websites",
-    "Coding Ducks",
-    "The Booking Desk",
-    "Ghostchat",
-    "web design",
-    "GSAP",
-    "React",
-    "Next.js",
-    "Spline",
-    "Framer Motion",
-  ],
-  author: "Naresh Khatri",
-  email: "naresh.khatri2345@gmail.com",
-  site: "https://nareshkhatri.site",
+  title: "Kishor B | Full Stack Web Developer",
 
-  // for github stars button
-  githubUsername: "naresh-khatri",
-  githubRepo: "3d-portfolio",
+  description: {
+    long: "Explore the portfolio of Kishor B, a passionate Full Stack Developer building scalable web applications.",
+    short:
+      "Portfolio of Kishor B, a passionate Full Stack Developer.",
+  },
+
+  keywords: [
+    "Kishor B",
+    "portfolio",
+    "full stack developer",
+    "React",
+    "Node.js",
+    "MongoDB",
+    "JavaScript",
+  ],
+
+  author: "Kishor B",
+
+  email: "kishor8754215627@gmail.com",
+
+  site: "http://localhost:3000",
+
+  githubUsername: "kishor514",
+
+  githubRepo: "portfolio",
 
   get ogImg() {
     return this.site + "/assets/seo/og-image.png";
   },
+
   social: {
-    twitter: "https://x.com/nothotchaddi",
-    linkedin: "https://www.linkedin.com/in/naresh-khatri/",
-    instagram: "https://www.instagram.com/hotchaddi",
-    facebook: "https://www.facebook.com/HotChaddi/",
-    github: "https://github.com/Naresh-Khatri",
+    github: "https://github.com/kishor514",
+    linkedin: "https://www.linkedin.com/in/kishor45",
+    instagram: "https://instagram.com/kishork4988",
+    twitter: "",
+    facebook: "",
   },
 };
+
 export { config };
