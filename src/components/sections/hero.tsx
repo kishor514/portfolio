@@ -20,7 +20,7 @@ const HeroSection = () => {
   const { isLoading } = usePreloader();
 
   return (
-    <SectionWrapper id="hero" className={cn("relative w-full h-screen")}>
+    <SectionWrapper id="hero" className={cn("relative w-full min-h-screen")}>
       <div className="grid md:grid-cols-2">
         <div
           className={cn(
@@ -95,7 +95,7 @@ const HeroSection = () => {
                   </BoxReveal>
                 </Link>
 
-                <div className="md:self-start flex gap-3">
+                <div className="md:self-start flex flex-wrap gap-3">
                   <Tooltip delayDuration={300}>
                     <TooltipTrigger asChild>
                       <Link href={"#contact"}>
