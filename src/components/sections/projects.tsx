@@ -67,7 +67,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
         <ResponsiveDialogContent className="md:max-w-4xl md:h-[85vh] md:!flex md:flex-col md:overflow-hidden md:p-0 md:gap-0">
           {/* Sticky header */}
-          <div className="shrink-0 border-b border-border bg-background/80 backdrop-blur-sm px-8 py-5">
+          <div className="shrink-0 border-b border-border bg-background/80 backdrop-blur-sm px-4 md:px-8 py-4 md:py-5">
             <div className="flex items-center justify-between gap-4">
               <div className="flex items-center gap-4 min-w-0">
                 <h4 className="font-display text-xl md:text-2xl font-bold text-foreground tracking-tight truncate">
@@ -99,7 +99,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
           {/* Scrollable content */}
           <ScrollArea className="flex-1" type="always" data-lenis-prevent>
-            <div className="px-8 py-8">
+            <div className="px-4 md:px-8 py-6 md:py-8">
               {/* Tech stack */}
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
@@ -133,6 +133,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
+                className="break-words"
               >
                 {project.content}
               </motion.div>

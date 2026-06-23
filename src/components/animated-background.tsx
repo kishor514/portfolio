@@ -462,7 +462,7 @@ const KeyboardScene = ({ maxDpr }: { maxDpr: number }) => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Spline
-        className="w-full h-full fixed"
+        className="fixed inset-0 w-full h-full"
         ref={splineContainer}
         onLoad={(app: Application) => {
           setSplineApp(app);
