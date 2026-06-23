@@ -13,23 +13,21 @@ import { BlurIn, BoxReveal } from "../reveal-animations";
 import ScrollDownIcon from "../scroll-down-icon";
 import { SiGithub, SiLinkedin, SiInstagram } from "react-icons/si";
 import { config } from "@/data/config";
+
 import SectionWrapper from "../ui/section-wrapper";
 
 const HeroSection = () => {
   const { isLoading } = usePreloader();
 
   return (
-    <SectionWrapper
-      id="hero"
-      className={cn("relative w-full h-[100dvh] overflow-hidden")} // ← min-h-screen → h-[100dvh] overflow-hidden
-    >
-      <div className="grid md:grid-cols-2 h-full">
+    <SectionWrapper id="hero" className={cn("relative w-full min-h-screen")}>
+      <div className="grid md:grid-cols-2">
         <div
           className={cn(
-            "h-full z-[2]",
+            "h-[calc(100dvh-3rem)] md:h-[calc(100dvh-4rem)] z-[2]",
             "col-span-1",
             "flex flex-col justify-start md:justify-center items-center md:items-start",
-            "px-4 pt-20 sm:pb-16 md:p-20 lg:p-24 xl:p-28 w-full max-w-[100vw]" // ← pt-28 → pt-20
+            "px-4 pt-28 sm:pb-16 md:p-20 lg:p-24 xl:p-28 w-full max-w-[100vw]"
           )}
         >
           {!isLoading && (
@@ -59,6 +57,7 @@ const HeroSection = () => {
                       >
                         Kishor
                         <br className="md:block hidden" />
+                        
                       </h1>
                     </TooltipTrigger>
                     <TooltipContent
@@ -82,7 +81,7 @@ const HeroSection = () => {
                 </BlurIn>
               </div>
 
-              <div className="mt-6 flex flex-col gap-3 w-full max-w-[400px] md:max-w-none md:w-fit px-2 sm:px-0"> {/* ← mt-8 → mt-6 */}
+              <div className="mt-8 flex flex-col gap-3 w-full max-w-[400px] md:max-w-none md:w-fit px-2 sm:px-0">
                 <Link
                   href="https://drive.google.com/file/d/1M9vNND4IIUFlSH4NJjgsKPz9v_bCzgAh/view?usp=drive_link"
                   target="_blank"
@@ -108,23 +107,35 @@ const HeroSection = () => {
                         </Button>
                       </Link>
                     </TooltipTrigger>
+
                     <TooltipContent side="bottom">
                       <p>pls 🥹 🙏</p>
                     </TooltipContent>
                   </Tooltip>
 
                   <div className="flex items-center h-full gap-2">
-                    <Link href="https://github.com/kishor514" target="_blank">
+                    <Link
+                      href="https://github.com/kishor514"
+                      target="_blank"
+                    >
                       <Button variant={"outline"}>
                         <SiGithub size={24} />
                       </Button>
                     </Link>
-                    <Link href="https://www.linkedin.com/in/kishor45" target="_blank">
+
+                    <Link
+                      href="https://www.linkedin.com/in/kishor45"
+                      target="_blank"
+                    >
                       <Button variant={"outline"}>
                         <SiLinkedin size={24} />
                       </Button>
                     </Link>
-                    <Link href="https://instagram.com/kishork4988" target="_blank">
+
+                    <Link
+                      href="https://instagram.com/kishork4988"
+                      target="_blank"
+                    >
                       <Button variant={"outline"}>
                         <SiInstagram size={24} />
                       </Button>
@@ -136,7 +147,7 @@ const HeroSection = () => {
           )}
         </div>
 
-        <div className="col-span-1 hidden md:block" />
+        <div className="grid col-span-1"></div>
       </div>
 
       <div className="absolute bottom-10 left-[50%] translate-x-[-50%]">
