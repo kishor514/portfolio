@@ -236,7 +236,13 @@ const KeyboardScene = ({ maxDpr }: { maxDpr: number }) => {
     kbd.visible = true;
     setKeyboardRevealed(true);
 
-    const currentState = getKeyboardState({ section: activeSection, isMobile });
+    const actualIsMobile = window.innerWidth <= 768;
+    const currentState = getKeyboardState({ section: activeSection, isMobile: actualIsMobile });
+    
+    // Explicitly set position so the intro animation starts at the right spot
+    gsap.set(kbd.position, currentState.position);
+    gsap.set(kbd.rotation, currentState.rotation);
+
     gsap.fromTo(
       kbd.scale,
       { x: 0.01, y: 0.01, z: 0.01 },
@@ -252,7 +258,7 @@ const KeyboardScene = ({ maxDpr }: { maxDpr: number }) => {
 
     await sleep(900);
 
-    if (isMobile) {
+    if (actualIsMobile) {
       const mobileKeyCaps = allObjects.filter((obj) => obj.name === "keycap-mobile");
       mobileKeyCaps.forEach((keycap) => { keycap.visible = true; });
     } else {

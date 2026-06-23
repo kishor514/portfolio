@@ -122,7 +122,8 @@ export const getKeyboardState = ({
   section: Section;
   isMobile: boolean;
 }) => {
-  const baseTransform = STATES[section][isMobile ? "mobile" : "desktop"];
+  const actualIsMobile = typeof window !== "undefined" ? window.innerWidth <= 768 : isMobile;
+  const baseTransform = STATES[section][actualIsMobile ? "mobile" : "desktop"];
 
   const getScaleOffset = () => {
     const width = window.innerWidth;
