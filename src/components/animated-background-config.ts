@@ -13,7 +13,6 @@ export const STATES = {
       rotation: { x: 0, y: 0, z: 0 },
     },
   },
-  // ... rest unchanged
   about: {
     desktop: {
       scale: { x: 0.4, y: 0.4, z: 0.4 },

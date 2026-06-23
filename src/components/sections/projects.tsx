@@ -65,7 +65,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
           </div>
         </ResponsiveDialogTrigger>
 
-        <ResponsiveDialogContent className="md:max-w-4xl md:h-[85vh] md:!flex md:flex-col md:overflow-hidden md:p-0 md:gap-0">
+        <ResponsiveDialogContent className="max-w-4xl h-[85vh] flex flex-col overflow-hidden p-0 gap-0">
           {/* Sticky header */}
           <div className="shrink-0 border-b border-border bg-background/80 backdrop-blur-sm px-4 md:px-8 py-4 md:py-5">
             <div className="flex items-center justify-between gap-4">
@@ -98,7 +98,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
           </div>
 
           {/* Scrollable content */}
-          <ScrollArea className="flex-1" type="always" data-lenis-prevent>
+          <ScrollArea className="flex-1 min-h-0" type="always" data-lenis-prevent>
             <div className="px-4 md:px-8 py-6 md:py-8">
               {/* Tech stack */}
               <motion.div
