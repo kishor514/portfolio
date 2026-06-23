@@ -4,12 +4,12 @@ export const STATES = {
   hero: {
     desktop: {
       scale: { x: 0.20, y: 0.20, z: 0.20 },
-      position: { x: 225, y: -50, z: 0 },
+      position: { x: 225, y: -100, z: 0 },
       rotation: { x: 0, y: 0, z: 0 },
     },
     mobile: {
       scale: { x: 0.18, y: 0.18, z: 0.18 },
-      position: { x: 0, y: 200, z: 0 },  // ← changed from -150 to -50
+      position: { x: 0, y: -150, z: 0 },
       rotation: { x: 0, y: 0, z: 0 },
     },
   },
