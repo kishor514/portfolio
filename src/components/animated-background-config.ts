@@ -8,7 +8,7 @@ export const STATES = {
       rotation: { x: 0, y: 0, z: 0 },
     },
     mobile: {
-      scale: { x: 0.18, y: 0.18, z: 0.18 },
+      scale: { x: 0.22, y: 0.22, z: 0.22 },
       position: { x: 0, y: -50, z: 0 },
       rotation: { x: 0, y: 0, z: 0 },
     },
