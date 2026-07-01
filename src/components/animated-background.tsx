@@ -6,7 +6,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 const Spline = React.lazy(() => import("@splinetool/react-spline"));
 import { Skill, SkillNames, SKILLS } from "@/data/constants";
 import { sleep } from "@/lib/utils";
-import { useMediaQuery } from "@/hooks/use-media-query";
 import { usePreloader } from "./preloader";
 import { useTheme } from "next-themes";
 import { Section, getKeyboardState } from "./animated-background-config";
@@ -15,10 +14,9 @@ import { usePerfProfile } from "@/hooks/use-perf-profile";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const KeyboardScene = ({ maxDpr }: { maxDpr: number }) => {
+const KeyboardScene = ({ maxDpr, isMobile }: { maxDpr: number, isMobile: boolean }) => {
   const { isLoading, bypassLoading } = usePreloader();
   const { theme } = useTheme();
-  const isMobile = useMediaQuery("(max-width: 767px)");
   const splineContainer = useRef<HTMLDivElement>(null);
   const [splineApp, setSplineApp] = useState<Application>();
   const selectedSkillRef = useRef<Skill | null>(null);
@@ -495,9 +493,9 @@ const KeyboardScene = ({ maxDpr }: { maxDpr: number }) => {
  * splash when 3D is disabled.
  */
 const AnimatedBackground = () => {
-  const { disable3D, maxDpr, ready } = usePerfProfile();
+  const { disable3D, maxDpr, ready, isMobile } = usePerfProfile();
   if (!ready || disable3D) return null;
-  return <KeyboardScene maxDpr={maxDpr} />;
+  return <KeyboardScene maxDpr={maxDpr} isMobile={isMobile} />;
 };
 
 /**

@@ -9,8 +9,8 @@ export const STATES = {
       rotation: { x: 0, y: 0, z: 0 },
     },
     mobile: {
-      scale: { x: 0.18, y: 0.18, z: 0.18 },
-      position: { x: 0, y: -150, z: 0 },
+      scale: { x: 0.30, y: 0.30, z: 0.30 },
+      position: { x: 0, y: -40, z: 0 },
       rotation: { x: 0, y: 0, z: 0 },
     },
   },

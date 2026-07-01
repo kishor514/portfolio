@@ -17,7 +17,7 @@ export enum SkillNames {
   PRETTIER = "prettier",
   NPM = "npm",
   FIREBASE = "firebase",
-  WORDPRESS = "wordpress",
+  WORDPRESS = "wordpress", 
   LINUX = "linux",
   DOCKER = "docker",
   NGINX = "nginx",
