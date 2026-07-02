@@ -134,11 +134,25 @@ const KeyboardScene = ({ maxDpr, isMobile }: { maxDpr: number, isMobile: boolean
     if (!kbd) return [];
 
     // Initial state
-    const heroState = getKeyboardState({ section: "hero", isMobile });
-    gsap.set(kbd.scale, heroState.scale);
-    gsap.set(kbd.position, heroState.position);
+    const initialSection = isMobile ? "skills" : "hero";
+    const initialState = getKeyboardState({ section: initialSection, isMobile });
+    gsap.set(kbd.scale, initialState.scale);
+    gsap.set(kbd.position, initialState.position);
+    gsap.set(kbd.rotation, initialState.rotation);
+    // Explicitly set active section so text visibility syncs correctly on load
+    setActiveSection(initialSection);
 
-    // Section transitions
+    // Section transitions based on DOM order
+    if (isMobile) {
+      // DOM order: skills -> hero -> experience -> projects -> contact
+      return [
+        createSectionTimeline("#hero", "hero", "skills"),
+        createSectionTimeline("#projects", "projects", "hero", "top 70%"),
+        createSectionTimeline("#contact", "contact", "projects", "top 30%"),
+      ].filter(Boolean) as gsap.core.Timeline[];
+    }
+
+    // DOM order: hero -> skills -> experience -> projects -> contact
     return [
       createSectionTimeline("#skills", "skills", "hero"),
       createSectionTimeline("#projects", "projects", "skills", "top 70%"),

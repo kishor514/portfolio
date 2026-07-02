@@ -113,13 +113,13 @@ const HeroSection = () => {
                     </TooltipContent>
                   </Tooltip>
 
-                  <div className="flex items-center h-full gap-2">
+                  <div className="flex items-center gap-2">
                     <Link
                       href="https://github.com/kishor514"
                       target="_blank"
                     >
-                      <Button variant={"outline"}>
-                        <SiGithub size={24} />
+                      <Button variant={"outline"} size={"icon"} className="shrink-0">
+                        <SiGithub size={20} />
                       </Button>
                     </Link>
 
@@ -127,8 +127,8 @@ const HeroSection = () => {
                       href="https://www.linkedin.com/in/kishor45"
                       target="_blank"
                     >
-                      <Button variant={"outline"}>
-                        <SiLinkedin size={24} />
+                      <Button variant={"outline"} size={"icon"} className="shrink-0">
+                        <SiLinkedin size={20} />
                       </Button>
                     </Link>
 
@@ -136,8 +136,8 @@ const HeroSection = () => {
                       href="https://instagram.com/kishork4988"
                       target="_blank"
                     >
-                      <Button variant={"outline"}>
-                        <SiInstagram size={24} />
+                      <Button variant={"outline"} size={"icon"} className="shrink-0">
+                        <SiInstagram size={20} />
                       </Button>
                     </Link>
                   </div>
