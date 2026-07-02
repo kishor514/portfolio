@@ -1,4 +1,3 @@
-
 export type Section = "hero" | "about" | "skills" | "experience" | "projects" | "contact";
 
 export const STATES = {
@@ -10,7 +9,7 @@ export const STATES = {
     },
     mobile: {
       scale: { x: 0.30, y: 0.30, z: 0.30 },
-      position: { x: 0, y: -40, z: 0 },
+      position: { x: 0, y: -200, z: 0 },
       rotation: { x: 0, y: 0, z: 0 },
     },
   },
@@ -25,7 +24,7 @@ export const STATES = {
       },
     },
     mobile: {
-      scale: { x: 0.25, y: 0.25, z: 0.25 },
+      scale: { x: 0.4, y: 0.4, z: 0.4 },
       position: { x: 0, y: -40, z: 0 },
       rotation: {
         x: 0,
@@ -45,7 +44,7 @@ export const STATES = {
       },
     },
     mobile: {
-      scale: { x: 0.20, y: 0.20, z: 0.20 },
+      scale: { x: 0.3, y: 0.3, z: 0.3 },
       position: { x: 0, y: -40, z: 0 },
       rotation: {
         x: Math.PI / 6,
@@ -65,7 +64,7 @@ export const STATES = {
       },
     },
     mobile: {
-      scale: { x: 0.20, y: 0.20, z: 0.20 },
+      scale: { x: 0.3, y: 0.3, z: 0.3 },
       position: { x: 0, y: -40, z: 0 },
       rotation: {
         x: 0,
@@ -85,7 +84,7 @@ export const STATES = {
       },
     },
     mobile: {
-      scale: { x: 0.20, y: 0.20, z: 0.20 },
+      scale: { x: 0.3, y: 0.3, z: 0.3 },
       position: { x: 0, y: 150, z: 0 },
       rotation: {
         x: Math.PI,
@@ -105,7 +104,7 @@ export const STATES = {
       },
     },
     mobile: {
-      scale: { x: 0.18, y: 0.18, z: 0.18 },
+      scale: { x: 0.25, y: 0.25, z: 0.25 },
       position: { x: 0, y: 150, z: 0 },
       rotation: {
         x: Math.PI,
@@ -123,8 +122,7 @@ export const getKeyboardState = ({
   section: Section;
   isMobile: boolean;
 }) => {
-  const actualIsMobile = typeof window !== "undefined" ? window.innerWidth <= 768 : isMobile;
-  const baseTransform = STATES[section][actualIsMobile ? "mobile" : "desktop"];
+  const baseTransform = STATES[section][isMobile ? "mobile" : "desktop"];
 
   const getScaleOffset = () => {
     const width = window.innerWidth;
@@ -138,8 +136,8 @@ export const getKeyboardState = ({
       : width / DESKTOP_REF_WIDTH;
 
     // Clamp values to prevent extremes
-    const minScale = isMobile ? 0.7 : 0.5;
-    const maxScale = isMobile ? 1.2 : 1.15;
+    const minScale = isMobile ? 0.5 : 0.5;
+    const maxScale = isMobile ? 0.6 : 1.15;
 
     return Math.min(Math.max(targetScale, minScale), maxScale);
   };
