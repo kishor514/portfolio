@@ -18,13 +18,13 @@ function MainPage() {
         <div className="order-2 md:order-1">
           <HeroSection />
         </div>
-        <div className="order-1 md:order-2 w-full">
+        <div className="order-3 md:order-2 w-full">
           <SkillsSection />
         </div>
-        <div className="order-3 w-full">
+        <div className="order-4 md:order-3 w-full">
           <ExperienceSection />
         </div>
-        <div className="order-4 w-full">
+        <div className="order-1 md:order-4 w-full">
           <ProjectsSection />
         </div>
         <div className="order-5 w-full">
