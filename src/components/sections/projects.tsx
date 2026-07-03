@@ -19,9 +19,9 @@ import SectionWrapper from "../ui/section-wrapper";
 
 const ProjectsSection = () => {
   return (
-    <SectionWrapper id="projects" className="max-w-7xl mx-auto md:h-[130vh]">
+    <SectionWrapper id="projects" className="max-w-7xl mx-auto md:min-h-[130vh] px-4">
       <SectionHeader id="projects" title="Projects" />
-      <div className="grid grid-cols-1 md:grid-cols-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project) => (
           <div
             key={project.id}
@@ -43,10 +43,9 @@ const ProjectCard = ({ project }: { project: Project }) => {
   return (
     <div className="flex items-center justify-center">
       <ResponsiveDialog>
-        <ResponsiveDialogTrigger className="bg-transparent flex justify-center">
+        <ResponsiveDialogTrigger className="bg-transparent flex justify-center w-full">
           <div
-            className="relative w-[400px] h-auto rounded-lg overflow-hidden"
-            style={{ aspectRatio: "3/2" }}
+            className="relative w-full max-w-[400px] aspect-[3/2] rounded-lg overflow-hidden"
           >
             <Image
               className="absolute w-full h-full top-0 left-0 hover:scale-[1.05] transition-all"
@@ -66,9 +65,9 @@ const ProjectCard = ({ project }: { project: Project }) => {
           </div>
         </ResponsiveDialogTrigger>
 
-        <ResponsiveDialogContent className="md:max-w-4xl md:h-[85vh] md:!flex md:flex-col md:overflow-hidden md:p-0 md:gap-0">
+        <ResponsiveDialogContent className="max-w-4xl h-[85vh] flex flex-col overflow-hidden p-0 gap-0">
           {/* Sticky header */}
-          <div className="shrink-0 border-b border-border bg-background/80 backdrop-blur-sm px-8 py-5">
+          <div className="shrink-0 border-b border-border bg-background/80 backdrop-blur-sm px-4 md:px-8 py-4 md:py-5">
             <div className="flex items-center justify-between gap-4">
               <div className="flex items-center gap-4 min-w-0">
                 <h4 className="font-display text-xl md:text-2xl font-bold text-foreground tracking-tight truncate">
@@ -99,8 +98,8 @@ const ProjectCard = ({ project }: { project: Project }) => {
           </div>
 
           {/* Scrollable content */}
-          <ScrollArea className="flex-1" type="always" data-lenis-prevent>
-            <div className="px-8 py-8">
+          <ScrollArea className="flex-1 min-h-0" type="always" data-lenis-prevent>
+            <div className="px-4 md:px-8 py-6 md:py-8">
               {/* Tech stack */}
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
@@ -134,6 +133,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
+                className="break-words"
               >
                 {project.content}
               </motion.div>

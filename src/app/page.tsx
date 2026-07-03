@@ -14,22 +14,12 @@ function MainPage() {
   return (
     <SmoothScroll>
       <AnimatedBackground />
-      <main className={cn("bg-slate-100 dark:bg-transparent canvas-overlay-mode flex flex-col")}>
-        <div className="order-2 md:order-1">
-          <HeroSection />
-        </div>
-        <div className="order-1 md:order-2 w-full">
-          <SkillsSection />
-        </div>
-        <div className="order-3 w-full">
-          <ExperienceSection />
-        </div>
-        <div className="order-4 w-full">
-          <ProjectsSection />
-        </div>
-        <div className="order-5 w-full">
-          <ContactSection />
-        </div>
+      <main className={cn("bg-slate-100 dark:bg-transparent canvas-overlay-mode")}>
+        <HeroSection />
+        <SkillsSection />
+        <ExperienceSection />
+        <ProjectsSection />
+        <ContactSection />
       </main>
     </SmoothScroll>
   );
