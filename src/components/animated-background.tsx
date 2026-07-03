@@ -134,7 +134,7 @@ const KeyboardScene = ({ maxDpr, isMobile }: { maxDpr: number, isMobile: boolean
     if (!kbd) return [];
 
     // Initial state
-    const initialSection = isMobile ? "skills" : "hero";
+    const initialSection = isMobile ? "projects" : "hero";
     const initialState = getKeyboardState({ section: initialSection, isMobile });
     gsap.set(kbd.scale, initialState.scale);
     gsap.set(kbd.position, initialState.position);
@@ -144,11 +144,12 @@ const KeyboardScene = ({ maxDpr, isMobile }: { maxDpr: number, isMobile: boolean
 
     // Section transitions based on DOM order
     if (isMobile) {
-      // DOM order: skills -> hero -> experience -> projects -> contact
+      // DOM order: projects -> hero -> skills -> experience -> contact
       return [
-        createSectionTimeline("#hero", "hero", "skills"),
-        createSectionTimeline("#projects", "projects", "hero", "top 70%"),
-        createSectionTimeline("#contact", "contact", "projects", "top 30%"),
+        createSectionTimeline("#hero", "hero", "projects"),
+        createSectionTimeline("#skills", "skills", "hero"),
+        createSectionTimeline("#experience", "experience", "skills"),
+        createSectionTimeline("#contact", "contact", "experience", "top 30%"),
       ].filter(Boolean) as gsap.core.Timeline[];
     }
 
