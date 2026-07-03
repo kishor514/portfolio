@@ -20,14 +20,14 @@ const HeroSection = () => {
   const { isLoading } = usePreloader();
 
   return (
-    <SectionWrapper id="hero" className={cn("relative w-full min-h-screen")}>
+    <SectionWrapper id="hero" className={cn("relative w-full h-screen")}>
       <div className="grid md:grid-cols-2">
         <div
           className={cn(
             "h-[calc(100dvh-3rem)] md:h-[calc(100dvh-4rem)] z-[2]",
             "col-span-1",
             "flex flex-col justify-start md:justify-center items-center md:items-start",
-            "px-4 pt-28 sm:pb-16 md:p-20 lg:p-24 xl:p-28 w-full max-w-[100vw]"
+            "pt-28 sm:pb-16 md:p-20 lg:p-24 xl:p-28"
           )}
         >
           {!isLoading && (
@@ -51,7 +51,7 @@ const HeroSection = () => {
                       <h1
                         className={cn(
                           "-ml-[6px] leading-none font-thin text-transparent text-slate-800 text-left",
-                          "font-thin text-6xl sm:text-7xl md:text-7xl lg:text-8xl xl:text-9xl",
+                          "font-thin text-7xl md:text-7xl lg:text-8xl xl:text-9xl",
                           "cursor-default text-edge-outline font-display"
                         )}
                       >
@@ -81,7 +81,7 @@ const HeroSection = () => {
                 </BlurIn>
               </div>
 
-              <div className="mt-8 flex flex-col gap-3 w-full max-w-[400px] md:max-w-none md:w-fit px-2 sm:px-0">
+              <div className="mt-8 flex flex-col gap-3 w-fit">
                 <Link
                   href="https://drive.google.com/file/d/1M9vNND4IIUFlSH4NJjgsKPz9v_bCzgAh/view?usp=drive_link"
                   target="_blank"
@@ -95,7 +95,7 @@ const HeroSection = () => {
                   </BoxReveal>
                 </Link>
 
-                <div className="md:self-start flex flex-wrap gap-3 justify-center md:justify-start">
+                <div className="md:self-start flex gap-3">
                   <Tooltip delayDuration={300}>
                     <TooltipTrigger asChild>
                       <Link href={"#contact"}>
